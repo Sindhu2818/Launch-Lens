@@ -1,0 +1,250 @@
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Left Panel */
+.auth-left {
+  width: 45%;
+  background: linear-gradient(160deg, #F3EFFE 0%, #EDFAF5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px;
+}
+
+.auth-blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.auth-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+}
+
+.auth-blob-1 {
+  width: 200px;
+  height: 200px;
+  background: var(--lavender);
+  top: 15%;
+  right: 10%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.auth-blob-2 {
+  width: 180px;
+  height: 180px;
+  background: var(--mint);
+  bottom: 20%;
+  left: 5%;
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--purple-d);
+  margin-bottom: 8px;
+}
+
+.auth-tagline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.auth-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--body);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 280px;
+}
+
+.auth-pill svg {
+  color: var(--purple-d);
+}
+
+/* Right Panel */
+.auth-right {
+  width: 55%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.auth-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--muted);
+  cursor: pointer;
+  text-align: center;
+  transition: all 150ms;
+}
+
+.auth-tab.active {
+  color: var(--purple-d);
+  border-bottom: 2px solid var(--purple-d);
+  margin-bottom: -2px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-api-error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  padding: 12px;
+  border-radius: var(--radius-input);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.forgot-link {
+  text-align: right;
+  margin-top: -8px;
+}
+
+.forgot-link a {
+  font-size: 12px;
+  color: var(--purple-d);
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: var(--purple-d);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.auth-divider::before, .auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border);
+}
+
+.auth-divider span {
+  padding: 0 10px;
+}
+
+.google-btn {
+  height: 48px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+.google-btn:hover {
+  background: var(--page-bg);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--body);
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-page {
+    flex-direction: column;
+  }
+  .auth-left {
+    display: none;
+  }
+  .auth-right {
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px;
+  }
+}
